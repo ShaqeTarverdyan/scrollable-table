@@ -38,7 +38,7 @@ const TableWrapper = () => {
 	    );
   	};
   	const onItemClick = (rowData) => {
-		if(selectedItems[rowData.id] != undefined){
+		if(selectedItems[rowData.id] !== undefined){
 			delete selectedItems[rowData.id];
 		} else {
 			selectedItems[rowData.id] = rowData;

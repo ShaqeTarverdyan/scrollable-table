@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Column, Table, AutoSizer,SortDirection,InfiniteLoader } from "react-virtualized";
 import "react-virtualized/styles.css";
 import _ from "lodash";
@@ -17,13 +17,13 @@ const CustomTable = ({ list, headers, onItemClick, onScroll,widths, selectedItem
 	const handleOnItemClick = ({index, rowData }) => {
 		onItemClick({...rowData});
 	}
-	const _sortList = ({ sortBy, sortDirection }) => {
+	const _sortList = useCallback(({ sortBy, sortDirection }) => {
 	    let newList = _.sortBy(list, [sortBy]);
 	    if (sortDirection === SortDirection.DESC) {
 	      newList.reverse();
 	    }
 	    return newList;
-	};
+	},[list]);
 
 	const _sort = ({ sortBy, sortDirection }) => {
 	    const sortedList = _sortList({ sortBy, sortDirection });
@@ -34,7 +34,7 @@ const CustomTable = ({ list, headers, onItemClick, onScroll,widths, selectedItem
 
 	useEffect(function() {
 		setSortedList(_sortList({ sortBy, sortDirection }));
-	}, [list])
+	}, [list, _sortList, sortBy, sortDirection])
 	return (
 		<div className="container">
 		 	<InfiniteLoader
