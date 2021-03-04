@@ -1,10 +1,10 @@
 import './App.css';
-import Home from './components/Home'
+import TableWrapper from './components/TableWrapper'
 
 function App() {
   return (
     <div >
-      <Home/>
+      <TableWrapper/>
     </div>
   );
 }

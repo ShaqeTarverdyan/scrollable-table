@@ -1,0 +1,71 @@
+html {
+   height: 100%;
+}
+
+body {
+   background: #94b5aa;
+   color: #273832;
+   display: flex;
+   min-height: 98%;
+}
+
+#app {
+   flex: 1;
+}
+
+.container {
+   display: flex;
+   flex: 1;
+   flex-direction: column;
+   width: 98%;
+}
+.header_style{
+	border: 1px solid grey;
+}
+
+.ReactVirtualized__Table__row {
+   border-top: 1px solid rgba(149, 196, 188, .8);
+   cursor: pointer;
+}
+.ReactVirtualized__Table__row:hover {
+	background-color: rgba(117, 156, 149, 0.5);
+	font-size: 18px;
+	box-shadow: 1px 2px 10px 0px rgba(63, 77, 74,0.75);
+}
+
+.table_row_active {
+	background-color: rgba(67, 110, 102, 0.5);
+	font-size: 18px;
+	color: white;
+}
+
+.ReactVirtualized__Table {
+	margin: auto;
+}
+.ReactVirtualized__Table__headerRow {
+   border: 0;
+   padding-right: 0px !important;
+   color: #757d7a;
+}
+
+.remove_button {
+	width: 90%;
+    padding: 10px 31px;
+    border: 1px solid grey;
+    border-radius: 8px;
+    color: white;
+    font-size: 17px;
+    background-color: rgba(68, 92, 88, 0.5);
+    cursor: pointer;
+    margin: 10px 20px;
+}
+
+.remove_button:active {
+  transform: translateY(2px);
+  border: 0
+}
+
+.wrapper {
+	width: 100%;
+	position: absolute;
+}
